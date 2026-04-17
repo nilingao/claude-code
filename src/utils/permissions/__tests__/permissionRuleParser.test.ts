@@ -141,6 +141,10 @@ describe("normalizeLegacyToolName", () => {
     expect(normalizeLegacyToolName("KillShell")).toBe("TaskStop");
   });
 
+  test("maps lowercase workflow to Workflow", () => {
+    expect(normalizeLegacyToolName("workflow")).toBe("Workflow");
+  });
+
   test("returns unknown name as-is", () => {
     expect(normalizeLegacyToolName("UnknownTool")).toBe("UnknownTool");
   });
